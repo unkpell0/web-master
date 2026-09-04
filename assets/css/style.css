@@ -1,103 +1,149 @@
-/* ===== PALET WARNA ===== */
+/* ===== MODERN DARK THEME PALETTE ===== */
 :root {
-    --primary-blue: #3368a0;
-    --secondary-blue: #66a3bf;
-    --light-aqua: #c8dfdb;
-    --off-white: #f2efe7;
-    --text-dark: #333333;
+    --bg-dark: #0f172a;        /* Latar belakang utama (Slate 900) */
+    --card-bg: #1e293b;        /* Latar belakang card (Slate 800) */
+    --text-primary: #f8fafc;   /* Teks utama putih (Slate 50) */
+    --text-secondary: #94a3b8; /* Teks paragraf abu-abu (Slate 400) */
+    --accent-color: #3b82f6;   /* Biru aksen utama (Blue 500) */
+    --accent-hover: #2563eb;   /* Biru hover (Blue 600) */
+    --border-color: #334155;   /* Garis tepi tipis (Slate 700) */
 }
 
-/* ===== RESET & BODY (Sticky Footer) ===== */
+/* ===== RESET & BODY ===== */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--off-white);
-    color: var(--text-dark);
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ===== AMBIENT GLOW EFFECT ===== */
+body::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 60%);
+    z-index: -1;
 }
 
 /* ===== HEADER ===== */
 header {
-    background-color: var(--primary-blue);
-    color: #ffffff;
     text-align: center;
-    padding: 2.5rem 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 4rem 1rem 2rem;
 }
 
 header h1 {
-    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+    /* Efek teks gradasi modern */
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 header p {
-    margin: 0;
+    color: var(--text-secondary);
     font-size: 1.1rem;
-    color: var(--light-aqua);
+    margin: 0;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* ===== MAIN CONTENT & GRID ===== */
 main {
-    flex: 1; /* Mendorong footer ke bawah */
-    padding: 2.5rem 2rem;
+    flex: 1;
+    padding: 2rem;
     max-width: 1000px;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* ===== GRID ETALASE ===== */
 .portfolio-grid {
     display: grid;
-    /* Membuat kolom otomatis beradaptasi (responsif di layar kecil maupun besar) */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 /* ===== CARD JOBSHEET ===== */
 .card {
-    background-color: #ffffff;
-    padding: 25px 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-top: 6px solid var(--secondary-blue);
-    transition: transform 0.2s ease-in-out;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Efek mengambang saat disentuh mouse */
-    box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Label kecil di atas judul */
+.badge {
+    display: inline-block;
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .card h2 {
-    margin-top: 0;
-    color: var(--primary-blue);
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
 }
 
-/* ===== TOMBOL BUTTON ===== */
+.card p {
+    color: var(--text-secondary);
+    margin: 0 0 2rem 0;
+    font-size: 0.95rem;
+}
+
+/* ===== TOMBOL ===== */
 .btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 24px;
-    background-color: var(--primary-blue);
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 0.9rem;
+    background-color: var(--accent-color);
     color: #ffffff;
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+    box-sizing: border-box;
 }
 
 .btn:hover {
-    background-color: var(--secondary-blue);
+    background-color: var(--accent-hover);
+}
+
+.btn:active {
+    transform: scale(0.98); /* Efek mengecil saat diklik */
 }
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: var(--primary-blue);
-    color: #ffffff;
     text-align: center;
-    padding: 15px;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
     margin-top: auto;
 }

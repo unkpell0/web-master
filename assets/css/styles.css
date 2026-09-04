@@ -1,0 +1,103 @@
+/* ===== PALET WARNA ===== */
+:root {
+    --primary-blue: #3368a0;
+    --secondary-blue: #66a3bf;
+    --light-aqua: #c8dfdb;
+    --off-white: #f2efe7;
+    --text-dark: #333333;
+}
+
+/* ===== RESET & BODY (Sticky Footer) ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--off-white);
+    color: var(--text-dark);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--light-aqua);
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    flex: 1; /* Mendorong footer ke bawah */
+    padding: 2.5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ===== GRID ETALASE ===== */
+.portfolio-grid {
+    display: grid;
+    /* Membuat kolom otomatis beradaptasi (responsif di layar kecil maupun besar) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* ===== CARD JOBSHEET ===== */
+.card {
+    background-color: #ffffff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 6px solid var(--secondary-blue);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efek mengambang saat disentuh mouse */
+    box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--primary-blue);
+}
+
+/* ===== TOMBOL BUTTON ===== */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 24px;
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-blue);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}

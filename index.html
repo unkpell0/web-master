@@ -3,50 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Portofolio - Marvelino Husca</title>
+    <title>Portofolio Praktikum Web</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Memanggil Font Inter dari Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Efek pendaran cahaya di latar belakang -->
-    <div class="glow-bg"></div> 
+    <div class="container">
+        <header>
+            <h1>Portofolio Web</h1>
+            <p>Marvelino Husca &bull; TI 1H &bull; Polinema</p>
+        </header>
 
-    <header>
-        <h1>Portofolio Praktikum Web</h1>
-        <p>Marvelino Husca | Kelas TI 1H | Politeknik Negeri Malang</p>
-    </header>
+        <main>
+            <div class="grid">
+                <!-- Card Jobsheet 1 (Seluruh kotak bisa diklik) -->
+                <a href="https://jobsheet-1.vercel.app" target="_blank" class="card">
+                    <div class="card-header">
+                        <h2>HTML5 Semantic</h2>
+                        <span class="badge">Jobsheet 1</span>
+                    </div>
+                    <p>Pengenalan struktur dasar HTML5 dan tag semantik untuk kerangka SIMPUS-MINI.</p>
+                </a>
 
-    <main>
-        <section class="portfolio-grid">
-            
-            <!-- Card Jobsheet 1 -->
-            <article class="card">
-                <div class="card-content">
-                    <span class="badge">Jobsheet 1</span>
-                    <h2>HTML5 Semantic</h2>
-                    <p>Pengenalan struktur dasar HTML5 dan tag semantik untuk membangun kerangka aplikasi SIMPUS-MINI.</p>
-                </div>
-                <!-- Ganti link di bawah dengan link Vercel Jobsheet 1 -->
-                <a href="https://jobsheet-1.vercel.app" target="_blank" class="btn">Lihat Website</a>
-            </article>
+                <!-- Card Jobsheet 2 -->
+                <a href="https://jobsheet-2.vercel.app" target="_blank" class="card">
+                    <div class="card-header">
+                        <h2>CSS & Layouting</h2>
+                        <span class="badge">Jobsheet 2</span>
+                    </div>
+                    <p>Implementasi CSS (Grid & Flexbox) untuk merapikan tata letak dan palet warna UI/UX.</p>
+                </a>
+            </div>
+        </main>
 
-            <!-- Card Jobsheet 2 -->
-            <article class="card">
-                <div class="card-content">
-                    <span class="badge">Jobsheet 2</span>
-                    <h2>CSS & Layouting</h2>
-                    <p>Implementasi CSS (Grid & Flexbox) untuk merapikan tata letak (layout) dan menerapkan palet warna UI/UX.</p>
-                </div>
-                <!-- Ganti link di bawah dengan link Vercel Jobsheet 2 -->
-                <a href="https://jobsheet-2.vercel.app" target="_blank" class="btn">Lihat Website</a>
-            </article>
-
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Marvelino Husca. D4 Teknik Informatika.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2026 Marvelino Husca. D4 Teknik Informatika.</p>
+        </footer>
+    </div>
 </body>
 </html>
